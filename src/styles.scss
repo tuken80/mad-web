@@ -1,0 +1,127 @@
+@import '~@angular/material/theming';
+@import '_variables';
+
+@include mat-core();
+
+$rd-app-typography: mat-typography-config(
+        $font-family: "'Akaya Telivigala', cursive",
+        $headline: mat-typography-level(80px, 60px, 700),
+        $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+@include angular-material-typography($rd-app-typography);
+
+$rd-app-theme: mat-light-theme((
+        color: (
+                primary: $primary-palette,
+                accent: $accent-palette,
+                warn: $warn-palette,
+        )
+));
+
+@include angular-material-theme($rd-app-theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Akaya Telivigala', cursive; }
+
+.color-accent {
+  color: $accent-color;
+}
+
+.color-warn {
+  color: $warn-color;
+}
+
+.color-light {
+  color: $light-color;
+}
+
+.back-dark {
+  background-color: $dark-color;
+}
+
+.back-light {
+  background-color: $light-color;
+}
+
+.stroked-primary {
+  border: 1px solid $primary-color !important;
+}
+
+.stroked-accent {
+  border: 1px solid $accent-color !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.active mat-icon {
+  color: $accent-color;
+}
+
+.h1-size {
+  font-size: mat-font-size($rd-app-typography, headline);
+}
+
+.rotate {
+  -webkit-transition: -webkit-transform 1s;
+  transition: transform 1s;
+}
+
+.rotate:hover {
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.rotate-target {
+  -webkit-transition: -webkit-transform 1s;
+  transition: transform 1s;
+}
+
+.rotate-listener:hover .rotate-target {
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: $primary-color;
+}
+
+#search-form .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: $light-color;
+}
+
+mzd-timeline-content:after {
+  border: 2px $accent-color solid !important;
+  height: 35px !important;
+}
+
+
+
+
+
+
+.example-action-buttons {
+  padding-bottom: 20px;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
